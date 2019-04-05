@@ -24,8 +24,7 @@ def main():
 
     ae_name = 'aae'
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
 
