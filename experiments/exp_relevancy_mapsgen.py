@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import copy
 import gzip
@@ -28,8 +27,6 @@ def main():
 
     dataset = sys.argv[1]
 
-    # dataset = 'cifar10'
-
     if len(sys.argv) > 2:
         start_from = int(sys.argv[2])
     else:
@@ -56,12 +53,11 @@ def main():
         print('unknown neigh type %s' % neigh_type)
         return -1
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
     path_results = path + 'results/rel/'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
-    path_expl = '/media/riccardo/data1/ExplainingImageClassifiers/expl/'
+    path_expl = './expl/'
 
     black_box_filename = path_models + '%s_%s' % (dataset, black_box)
     results_filename = path_results + 'rel_%s_%s_%s.json' % (dataset, black_box, neigh_type)
@@ -86,7 +82,7 @@ def main():
     bb_model = Model(inputs=input_tensor, outputs=bb.layers[-1].output)
     target_tensor = bb_model(input_tensor)
 
-    de_list = ['grad*input', 'saliency', 'intgrad', 'elrp', 'occlusion']   #, 'shapley_sampling']  # 'deeplift'
+    de_list = ['grad*input', 'saliency', 'intgrad', 'elrp', 'occlusion']
 
     errors = open(path_results + 'errors_relevancy_%s_%s.csv' % (dataset, black_box), 'w')
 
