@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import datetime
 import numpy as np
@@ -47,12 +46,11 @@ def main():
         print('unknown neigh type %s' % neigh_type)
         return -1
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
     path_results = path + 'results/fcp/'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
-    path_neigh = '/media/riccardo/data1/ExplainingImageClassifiers/neigh/'
+    path_neigh = './neigh/'
 
     black_box_filename = path_models + '%s_%s' % (dataset, black_box)
     results_filename = path_results + 'alore_p_%s_%s_%s.json' % (dataset, black_box, neigh_type)
