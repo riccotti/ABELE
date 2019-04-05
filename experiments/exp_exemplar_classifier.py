@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import copy
 import gzip
@@ -109,9 +108,7 @@ def main():
         print('unknown neigh type %s' % neigh_type)
         return -1
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
-    # path = './'
+    path = './'
     path_models = path + 'models/'
     path_results = path + 'results/expcl/'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
