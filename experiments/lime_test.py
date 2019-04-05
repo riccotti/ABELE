@@ -13,11 +13,10 @@ from experiments.exputil import get_black_box
 
 def main():
 
-    dataset = 'fashion'
+    dataset = 'mnist'
     black_box = 'RF'
 
-    path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    # path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
 
     black_box_filename = path_models + '%s_%s' % (dataset, black_box)
