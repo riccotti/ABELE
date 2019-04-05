@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import numpy as np
 from experiments.exputil import get_dataset
@@ -15,13 +14,11 @@ def rmse(x, y):
 
 def main():
 
-    # dataset = 'cifar10'
     ae_name = 'aae'
 
     for dataset in ['mnist', 'fashion', 'cifar10']:
 
-        path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-        # path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+        path = './'
         path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
 
         X_train, _, X_test, _, use_rgb = get_dataset(dataset)
