@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 from experiments.exputil import get_dataset
 from experiments.exputil import get_autoencoder
@@ -10,15 +9,14 @@ warnings.filterwarnings('ignore')
 
 def main():
 
-    dataset = 'cifar10bw'
+    dataset = 'mnist'
     ae_name = 'aae'
 
     epochs = 10000
     batch_size = 256
     sample_interval = 200
 
-    path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    # path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
 
     _, _, X_test, Y_test, use_rgb = get_dataset(dataset)
