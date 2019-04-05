@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import copy
 import json
@@ -30,8 +29,6 @@ def main():
 
     dataset = sys.argv[1]
 
-    # dataset = 'mnist'
-
     black_box = 'RF'
     neigh_type = 'rnd'
 
@@ -53,8 +50,7 @@ def main():
         print('unknown neigh type %s' % neigh_type)
         return -1
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
     path_results = path + 'results/stability/'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
@@ -110,7 +106,7 @@ def main():
             while count < 100 and continue_flag:
                 try:
                     exp = explainer.explain_instance(img, num_samples=1000, use_weights=True, metric=neuclidean)
-                    _, diff = exp.get_image_rule(features=None, samples=10)
+                    _, diff = exp.get_image_rule(features=None, samples=100)
                 except Exception:
                     count += 1
                 continue_flag = False
@@ -140,7 +136,7 @@ def main():
                 while count < 100 and continue_flag:
                     try:
                         exp1 = explainer.explain_instance(img1, num_samples=1000, use_weights=True, metric=neuclidean)
-                        _, diff1 = exp1.get_image_rule(features=None, samples=10)
+                        _, diff1 = exp1.get_image_rule(features=None, samples=100)
                     except Exception:
                         count += 1
                     continue_flag = False
