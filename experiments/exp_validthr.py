@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import copy
 import json
@@ -53,9 +52,6 @@ def get_plausibility(img_cdist, black_box, transform, X_test, rdist):
     nbr_real_instances = len(X_test)
     plausibility = calculate_plausibilities(rdist, dist, nbr_real_instances)
     return plausibility
-
-
-# X_random_noise = generate_random_noise(img, bb_predict, bbo[0], nbr_samples=20)
 
 
 def finding_lipswhitz_neigh(img, i2e, bb_predict, X_test_comp, Y_pred_comp, Y_pred_proba):
@@ -147,8 +143,7 @@ def main():
         print('unknown neigh type %s' % neigh_type)
         return -1
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
     path_results = path + 'results/validity/'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
