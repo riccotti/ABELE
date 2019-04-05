@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import json
 
@@ -18,11 +17,10 @@ def main():
 
     random_state = 0
     dataset = 'fashion'
-    black_box = 'AB'
+    black_box = 'RF'
     print(dataset, black_box)
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
     path_results = path + 'results/bb/'
 
