@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import copy
 import json
@@ -30,8 +29,6 @@ def main():
 
     dataset = sys.argv[1]
 
-    # dataset = 'mnist'
-
     black_box = 'DNN'
     neigh_type = 'hrgp'
 
@@ -57,9 +54,8 @@ def main():
     if neigh_type not in ['rnd', 'gntp', 'hrgp']:
         print('unknown neigh type %s' % neigh_type)
         return -1
-
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    
+    path = './'
     path_models = path + 'models/'
     path_results = path + 'results/stability/'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
@@ -93,7 +89,7 @@ def main():
     last_layer = -2 if dataset == 'mnist' else -1
     bb_model = Model(inputs=input_tensor, outputs=bb.layers[last_layer].output)
     target_tensor = bb_model(input_tensor)
-    de_list = ['grad*input', 'saliency', 'intgrad', 'elrp', 'occlusion']  #, 'shapley_sampling']  # 'deeplift'
+    de_list = ['grad*input', 'saliency', 'intgrad', 'elrp', 'occlusion']
 
     errors = open(path_results + 'errors_stability_%s_%s.csv' % (dataset, black_box), 'w')
 
@@ -133,7 +129,7 @@ def main():
                 # Alore
                 print(datetime.datetime.now(), 'calculating alore')
                 exp = explainer.explain_instance(img, num_samples=1000, use_weights=True, metric=neuclidean)
-                _, diff = exp.get_image_rule(features=None, samples=10)
+                _, diff = exp.get_image_rule(features=None, samples=100)
                 expl_list.append(diff)
 
                 # Lime
@@ -170,7 +166,7 @@ def main():
 
                     # Alore
                     exp1 = explainer.explain_instance(img1, num_samples=1000, use_weights=True, metric=neuclidean)
-                    _, diff1 = exp1.get_image_rule(features=None, samples=10)
+                    _, diff1 = exp1.get_image_rule(features=None, samples=100)
 
                     norm_exp = calculate_lipschitz_factor(expl_list[0], diff1)
                     lipschitz_list['alore'].append(norm_exp / norm_x)
