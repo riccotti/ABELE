@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import datetime
 import numpy as np
@@ -34,11 +33,10 @@ def main():
         print('unknown black box %s' % black_box)
         return -1
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
     path_results = path + 'results/fcp/'
-    path_neigh = '/media/riccardo/data1/ExplainingImageClassifiers/neigh/'
+    path_neigh = './neigh/'
 
     black_box_filename = path_models + '%s_%s' % (dataset, black_box)
     results_filename = path_results + 'lime_p_%s_%s.json' % (dataset, black_box)
