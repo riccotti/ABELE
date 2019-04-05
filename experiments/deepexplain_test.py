@@ -48,12 +48,11 @@ def plot(data, xi=None, cmap='RdBu_r', axis=plt, percentile=100, dilation=3.0, a
 
 def main():
 
-    dataset = 'fashion'
+    dataset = 'mnist'
     black_box = 'DNN'
     num_classes = 10
 
-    path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    # path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
 
     black_box_filename = path_models + '%s_%s' % (dataset, black_box)
