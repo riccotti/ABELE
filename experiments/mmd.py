@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/')
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -161,8 +160,7 @@ def main():
     nbr_prototypes = 10
     nbr_criticisms = 10
 
-    # path = '/Users/riccardo/Documents/PhD/ExplainImageClassifier/code/'
-    path = '/home/riccardo/Documenti/PhD/ExplainingImageClassifiers/code/'
+    path = './'
     path_models = path + 'models/'
 
     black_box_filename = path_models + '%s_%s' % (dataset, black_box)
