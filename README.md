@@ -14,3 +14,8 @@ Requirements:
 - deap
 - tensorflow
 - keras
+
+Black Box Links:
+- [RF](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html})
+- [CNN](https://keras.io/examples/cifar10_cnn/)
+- [ResNet](https://keras.io/examples/cifar10_resnet/)
