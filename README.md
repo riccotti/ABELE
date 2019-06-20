@@ -15,6 +15,11 @@ Requirements:
 - tensorflow
 - keras
 
+Dataset Links:
+- [mnist](http://yann.lecun.com/exdb/mnist/)
+- [cifar](https://www.cs.toronto.edu/~kriz/cifar.html)
+- [fashion](https://www.kaggle.com/zalando-research/)
+
 Black Box Links:
 - [RF](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html})
 - [CNN](https://keras.io/examples/cifar10_cnn/)
