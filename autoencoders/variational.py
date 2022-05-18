@@ -3,8 +3,7 @@ from datetime import datetime
 
 import keras.backend as K
 from keras.models import Model
-from keras.layers import Input, Dense, Lambda, Flatten, Reshape
-from keras.layers.advanced_activations import LeakyReLU
+from keras.layers import Input, Dense, Lambda, Flatten, Reshape,LeakyReLU
 from keras.layers import Conv2D, Conv2DTranspose, MaxPooling2D, UpSampling2D, BatchNormalization, Activation
 from keras.losses import binary_crossentropy
 from keras.utils import plot_model

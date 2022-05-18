@@ -24,7 +24,7 @@ def main():
 
     ae_name = 'aae'
 
-    path = './'
+    path = '../'
     path_models = path + 'models/'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
 

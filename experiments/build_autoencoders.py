@@ -16,7 +16,7 @@ def main():
     batch_size = 256
     sample_interval = 200
 
-    path = './'
+    path = '../'
     path_aemodels = path + 'aemodels/%s/%s/' % (dataset, ae_name)
 
     _, _, X_test, Y_test, use_rgb = get_dataset(dataset)

@@ -20,7 +20,7 @@ def main():
     black_box = 'RF'
     print(dataset, black_box)
 
-    path = './'
+    path = '../'
     path_models = path + 'models/'
     path_results = path + 'results/bb/'
 
